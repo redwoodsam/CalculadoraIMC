@@ -1,0 +1,58 @@
+<Janela>:
+    canvas:
+        Rectangle: 
+            source: 'background.png'
+            pos: self.pos
+            size: self.size
+
+            
+    FloatLayout:
+        canvas:
+            Color:
+                rgb: (0.7137, 0.9176, 0.9490)
+            Rectangle:
+                pos: (33, 365)
+                size: (185 ,30)
+        Label:
+            text: "Calculadora de IMC"
+            font_size: 20
+            bold: True
+            outline_color: (0,0,0)
+            outline_width: 1
+            color: (1, 0.60, 0.78, 1)
+            pos: (75, 330)
+
+        TextInput:
+            id: altura
+            hint_text: "Digite a sua altura, em metros"
+            multiline: False
+            write_tab: False
+            font_size: 14
+            pos: (10, 280)
+            size_hint: (2.3, 0.3)
+            on_text_validate: root.changefocus()
+        
+        TextInput:
+            id: peso
+            hint_text: "Digite o seu peso, em kg"
+            multiline: False
+            write_tab: False
+            font_size: 14
+            pos: (10, 240)
+            size_hint: (2.3, 0.3)
+            on_text_validate: root.clickbtn()
+
+        Button:
+            id: calcular
+            text: "Calcular"
+            size_hint: (1, 0.3)
+            pos: (75, 200)
+            on_press: root.clickbtn()
+        
+        TextInput:
+            id: output
+            font_size: 14
+            pos: (10, 20)
+            readonly: True
+            size_hint: (2.3, 1.7)
+        
